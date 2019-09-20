@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        {{ album.ref }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" routerLink="/album/{{album.id}}">{{ album.name }}</h5>
+        <p class="card-text">{{ album.description }}</p>
+        <span class="badge badge-info" *ngFor="let tag of album.tags">{{ tag }}</span>
+        <div>
+            <img class="glyph-icon" src="./assets/svg/si-glyph-heart.svg" *ngIf="album.like" />
+            <small *ngIf="album.like">{{ album.like }}</small>
+            <img class="glyph-icon" src="./assets/svg/si-glyph-timer.svg" *ngIf="album.duration" />
+            <small *ngIf="album.duration">{{ album.duration }} min</small>
+        </div>
+    </div>
+    <img class="card-img-top" src="../../assets/images/default_image.png" alt="Group Music">
+</div>

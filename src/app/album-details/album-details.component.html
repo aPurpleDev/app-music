@@ -1,0 +1,10 @@
+<div class="card" >
+        <img class="card-img-top" src="../../assets/images/default_image.png" alt="Group Music">
+        <div class="card-body">
+            <h5 class="card-title" *ngIf="album">Nom de l'album: {{album.name}}</h5>
+            <a class="btn btn-primary" *ngIf="album" (click)="play(album)">Play</a>
+        </div>
+        <ul class="list-group" *ngIf="albumChoosen">
+            <li class="list-group-item" *ngFor="let title of albumChoosen.list;  let i=index">{{ title }}</li>
+        </ul>
+    </div>
